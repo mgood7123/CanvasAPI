@@ -167,6 +167,7 @@ public class DrawColor {
                                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                                             // TODO
 //                                            canvas.drawColor((long) colorPicker.color);
+                                            canvas.drawColor(colorPicker.color);
                                         } else {
                                             canvas.drawColor(colorPicker.color);
                                         }
@@ -181,7 +182,8 @@ public class DrawColor {
                                     } else if (viewIdRes == R.layout.draw_color_long_blendmode) {
                                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                                             // TODO
-//                                            canvas.drawColor((long) colorPicker.color);
+//                                            canvas.drawColor((long) colorPicker.color, blendMode.mode);
+                                            canvas.drawColor(colorPicker.color, blendMode.mode);
                                         } else {
                                             canvas.drawColor(colorPicker.color);
                                         }
