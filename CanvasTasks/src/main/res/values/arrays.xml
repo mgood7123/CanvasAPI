@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="DrawColorNames">
+        <item>int color</item>
+        <item>long color</item>
+        <item>int color, PorterDuff.Mode mode</item>
+        <item>int color, BlendMode mode</item>
+        <item>long color, BlendMode mode</item>
+    </string-array>
+    <array name="DrawColorLayouts">
+        <item>@layout/draw_color_int</item>
+        <item>@layout/draw_color_long</item>
+        <item>@layout/draw_color_int_porterduff_mode</item>
+        <item>@layout/draw_color_int_blendmode</item>
+        <item>@layout/draw_color_long_blendmode</item>
+    </array>
+
+    <string-array name="colorTypes">
+        <item>ARGB Hexadecimal (00 to FF)</item>
+        <item>ARGB Integer (0 to 255)</item>
+    </string-array>
+    <array name="colorLayouts">
+        <item>@layout/color_hexadecimal</item>
+        <item>@layout/color_integer</item>
+    </array>
+
+    <string-array name="porterDuffModes">
+        <item>CLEAR</item>
+        <item>SRC</item>
+        <item>DST</item>
+        <item>SRC_OVER</item>
+        <item>DST_OVER</item>
+        <item>SRC_IN</item>
+        <item>DST_IN</item>
+        <item>SRC_OUT</item>
+        <item>DST_OUT</item>
+        <item>SRC_ATOP</item>
+        <item>DST_ATOP</item>
+        <item>XOR</item>
+        <item>DARKEN</item>
+        <item>LIGHTEN</item>
+        <item>MULTIPLY</item>
+        <item>SCREEN</item>
+        <item>ADD</item>
+        <item>OVERLAY</item>
+    </string-array>
+
+    <string-array name="blendModes">
+        <item>CLEAR</item>
+        <item>SRC</item>
+        <item>DST</item>
+        <item>SRC_OVER</item>
+        <item>DST_OVER</item>
+        <item>SRC_IN</item>
+        <item>DST_IN</item>
+        <item>SRC_OUT</item>
+        <item>DST_OUT</item>
+        <item>SRC_ATOP</item>
+        <item>DST_ATOP</item>
+        <item>XOR</item>
+        <item>PLUS</item>
+        <item>MODULATE</item>
+        <item>SCREEN</item>
+        <item>OVERLAY</item>
+        <item>DARKEN</item>
+        <item>LIGHTEN</item>
+        <item>COLOR_DODGE</item>
+        <item>COLOR_BURN</item>
+        <item>HARD_LIGHT</item>
+        <item>SOFT_LIGHT</item>
+        <item>DIFFERENCE</item>
+        <item>EXCLUSION</item>
+        <item>MULTIPLY</item>
+        <item>HUE</item>
+        <item>SATURATION</item>
+        <item>COLOR</item>
+        <item>LUMINOSITY</item>
+    </string-array>
+</resources>

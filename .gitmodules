@@ -1,0 +1,6 @@
+[submodule "InputFilterPlus"]
+	path = InputFilterPlus
+	url = https://github.com/mgood7123/InputFilterPlus
+[submodule "DraggableSwipableExpandableRecyclerView/src/main/java/smallville7123/DraggableSwipableExpandableRecyclerView"]
+	path = DraggableSwipableExpandableRecyclerView/src/main/java/smallville7123/DraggableSwipableExpandableRecyclerView
+	url = https://github.com/mgood7123/Draggable-Expandable-Swipable-RecyclerView

@@ -1,0 +1,9 @@
+rootProject.name = "Canvas API"
+include ':app'
+include ':ContextMenu'
+include ':Tasks'
+include ':TaskBuilder'
+include ':DraggableSwipableExpandableRecyclerView'
+include ':CanvasTasks'
+include ':InputFilterPlus'
+include ':InputFilterPlus'
