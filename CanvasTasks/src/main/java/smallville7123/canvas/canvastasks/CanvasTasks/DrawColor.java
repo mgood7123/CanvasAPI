@@ -113,6 +113,8 @@ public class DrawColor {
                                         isPorterDuffMode = false;
                                         isBlendMode = false;
 
+                                        // TODO: support Color Space somehow
+
                                         if (newViewResId == R.layout.draw_color_int_porterduff_mode) {
                                             isPorterDuffMode = true;
                                             currentPortContainer = newView.findViewById(R.id.PorterDuffModeContainer);
@@ -142,7 +144,19 @@ public class DrawColor {
 
                             @Override
                             public SpannableStringBuilder getParameterDescription() {
-                                DescriptionBuilder descriptionBuilder = new DescriptionBuilder()
+                                if ((viewIdRes == R.layout.draw_color_long || viewIdRes == R.layout.draw_color_long_blendmode)) {
+                                    return new DescriptionBuilder()
+                                            .appendBold("disabled ")
+                                            .append("due to")
+                                            .appendBold(" color space (")
+                                            .appendBold("long color ")
+                                            .append("parameter)")
+                                            .getBuilder();
+                                }
+
+                                DescriptionBuilder descriptionBuilder = new DescriptionBuilder();
+
+                                descriptionBuilder
                                         .append(colorPickerParameters.getParameterDescription());
                                 if (isBlendMode) {
                                     descriptionBuilder
@@ -161,16 +175,19 @@ public class DrawColor {
                             public DataRunnable generateAction(Context context) {
                                 return data -> {
                                     Canvas canvas = (Canvas) data;
+
+                                    // TODO: support Color Space somehow
+
                                     if (viewIdRes == R.layout.draw_color_int) {
                                         canvas.drawColor(colorPicker.color);
                                     } else if (viewIdRes == R.layout.draw_color_long) {
-                                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+//                                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                                             // TODO
 //                                            canvas.drawColor((long) colorPicker.color);
-                                            canvas.drawColor(colorPicker.color);
-                                        } else {
-                                            canvas.drawColor(colorPicker.color);
-                                        }
+//                                            canvas.drawColor(colorPicker.color);
+//                                        } else {
+//                                            canvas.drawColor(colorPicker.color);
+//                                        }
                                     } else if (viewIdRes == R.layout.draw_color_int_porterduff_mode) {
                                         canvas.drawColor(colorPicker.color, porterDuffMode.mode);
                                     } else if (viewIdRes == R.layout.draw_color_int_blendmode) {
@@ -180,13 +197,13 @@ public class DrawColor {
                                             canvas.drawColor(colorPicker.color);
                                         }
                                     } else if (viewIdRes == R.layout.draw_color_long_blendmode) {
-                                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+//                                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                                             // TODO
 //                                            canvas.drawColor((long) colorPicker.color, blendMode.mode);
-                                            canvas.drawColor(colorPicker.color, blendMode.mode);
-                                        } else {
-                                            canvas.drawColor(colorPicker.color);
-                                        }
+//                                            canvas.drawColor(colorPicker.color, blendMode.mode);
+//                                        } else {
+//                                            canvas.drawColor(colorPicker.color);
+//                                        }
                                     }
                                 };
                             }
